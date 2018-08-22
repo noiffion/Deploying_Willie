@@ -6,17 +6,17 @@ some other essential information about the website.
 
 #### Info about the webpage:
 
-  The URI of the site:           http://www.54.188.224.166.xip.io/
-  The IP address of the site:    54.188.224.166
-  The SSH port:                  2200
+ - The URI of the site:           http://www.54.188.224.166.xip.io/
+ - The IP address of the site:    54.188.224.166
+ - The SSH port:                  2200
   
 The private SSH key was included in the 'Notes to the Reviewer' section on submission.
-The public key was in the '.ssh' folder of user 'grader'.
+The public key was in the '.ssh' folder of user 'grader' on the server.
 
 
 #### Steps of deployment
 
-1) The application is hosted on [Amazon Lightsail] (https://lightsail.aws.amazon.com/)
+1) The application is hosted on [Amazon Lightsail](https://lightsail.aws.amazon.com/)
 2) The operating system instance used was Ubuntu 16.04
 3) The hostname of the instance is: 'Ubuntu-Oregon'
 
@@ -41,7 +41,7 @@ $ sudo apt install <package_name>
    - git
    - apache2-dev
 
-(libapache2-mod-wsgi-py3 was NOT installed via 'apt')
+(libapache2-mod-wsgi-py3 was NOT installed by 'apt')
 
 6) In the development machine an SSH keypair was generated using:
 ```

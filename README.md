@@ -28,7 +28,7 @@ $ sudo apt update
 $ sudo apt upgrade
 ```
 
-
+  
 5) The following packages were installed using:
 ```
 $ sudo apt install <package_name>
@@ -42,7 +42,7 @@ $ sudo apt install <package_name>
    - apache2-dev
 
 (libapache2-mod-wsgi-py3 was NOT installed by 'apt')
-
+  
 6) In the development machine an SSH keypair was generated using:
 ```
 $ ssh-keygen
@@ -57,7 +57,7 @@ $ sudo vim /etc/ssh/sshd_config
   With these modifications the instance became accessible via a different SSH keypair that was 
   originally provided.
 
-
+  
 7) The firewall of the instance (iptables) was calibrated using the 'ufw' program:
 ```
 $ sudo ufw default deny incoming
@@ -79,7 +79,7 @@ $ sudo ufw status
   After that the server was accessible only via the the terminal SSH of the development machine
   and the browser based pop-up SSH terminal became disabled.
 
-
+  
 8) A new user 'grader' was created with the password: grader and also permission for that user to
    be able to 'sudo' was set up in '90-cloud-init-users' (with the same parameters as 'ubuntu' user).
 ```
@@ -87,7 +87,7 @@ $ sudo adduser grader
 $ sudo vim /etc/sudoers.d/90-cloud-init-users
 ``` 
 
-
+  
 9) A new SSH keypair was generated on the development machine and the public key was put into the
    'grader' user's 'authorized_keys' file in the 'home/.ssh' directory. 
    The private key (grader_ub_1604) was retained on the development machine. 
@@ -96,11 +96,11 @@ $ sudo vim /etc/sudoers.d/90-cloud-init-users
 $ ssh grader@54.188.224.166 -p 2200 -i grader_ub_1604 
 ```
 
-
+  
 10) A new user in Postgresql was created (although postgres was not used by the application as the
     database server.)
 
-
+  
 11) With pip3 'virtualenv' was installed and a new 'virt_hamnet' folder was created in:
     '/var/www/html/'. The virtual environment was then activated. 
 
@@ -109,7 +109,7 @@ $ pip3 install virtualenv
 $ virtualenv /var/www/html/virt_hamnet
 $ source virt_hamnet/bin/activate
 ``` 
-
+  
 12) After that the following python libraries were installed in the virtual environment:
 
 ```
@@ -123,12 +123,12 @@ $ pip install
               urllib3
               mod-wsgi
 ```
-
-13) The application 'Shake-speare' from [https://github.com/noiffion/hamnet.git] (https://github.com/noiffion/hamnet.git)
+  
+13) The application 'Shake-speare' from [https://github.com/noiffion/hamnet.git](https://github.com/noiffion/hamnet.git)
     was cloned in this directory. The hamnet.wsgi file here and the wsgi.conf, wsgi.load 
     files in /etc/apache2/mods-available and the hamnet.conf file in /etc/apache2/sites-available
     were set up.
-
+  
 14) After checking the settings of the server and the wsgi and also the error log with:
 ```
 $ apache2ctl configtest
@@ -145,7 +145,7 @@ $ sudo service apache2 restart
  connections are allowed (following the requirements of the project) on port 80 and 'https' is not. 
  Therefore logging in to the site is not possible for users: for that an SSL certificate would be 
  needed and less restrictive firewall settings.)
-
+  
 #### Information sources:
 http://terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately
 https://askubuntu.com/questions/569550/assertionerror-using-apache2-and-libapache2-mod-wsgi-py3-on-ubuntu-14-04-python

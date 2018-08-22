@@ -144,7 +144,7 @@ $ sudo service apache2 restart
 (The site currently has only limited functionality due to the fact that only 'http' protocol based
  connections are allowed (following the requirements of the project) on port 80 and 'https' is not. 
  Therefore logging in to the site is not possible for users: for that an SSL certificate would be 
- needed an less restrictive firewall settings.)
+ needed and less restrictive firewall settings.)
 
 #### Information sources:
 http://terokarvinen.com/2017/write-python-3-web-apps-with-apache2-mod_wsgi-install-ubuntu-16-04-xenial-every-tiny-part-tested-separately
